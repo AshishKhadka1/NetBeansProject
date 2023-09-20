@@ -11,7 +11,7 @@ public class Background extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         textField1 = new java.awt.TextField();
@@ -124,56 +124,56 @@ public class Background extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void textField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField2ActionPerformed
+    private void textField2ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
-    }//GEN-LAST:event_textField2ActionPerformed
+    }                                          
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
          int a=Integer.parseInt(textField1.getText());
         int b=Integer.parseInt(textField2.getText());
         int res = a / b;
         String r= Integer.toString(res);
         jLabel1.setText(r); 
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }                                        
 
-    private void textField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField1ActionPerformed
+    private void textField1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
        
-    }//GEN-LAST:event_textField1ActionPerformed
+    }                                          
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
         int a = Integer.parseInt(textField1.getText());
         int b = Integer.parseInt(textField2.getText());
         int res = a + b;
         String r = Integer.toString(res);
         jLabel1.setText(r);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }                                        
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
         int a = Integer.parseInt(textField1.getText());
         int b = Integer.parseInt(textField2.getText());
         int res = a - b;
         String r = Integer.toString(res);
         jLabel1.setText(r);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }                                        
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
         int a = Integer.parseInt(textField1.getText());
         int b = Integer.parseInt(textField2.getText());
         int res = a * b;
         String r = Integer.toString(res);
         jLabel1.setText(r);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }                                        
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }                                        
     
     /**
      * @param args the command line arguments
@@ -210,7 +210,7 @@ public class Background extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -219,5 +219,5 @@ public class Background extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private java.awt.TextField textField1;
     private java.awt.TextField textField2;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
