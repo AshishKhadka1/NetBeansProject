@@ -4,6 +4,12 @@
  */
 package com.mycompany.calc;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.SQLException;
+import java.sql.PreparedStatement;
+
 public class Background extends javax.swing.JFrame {
 
     public Background() {
@@ -172,7 +178,27 @@ public class Background extends javax.swing.JFrame {
     }                                        
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+            // TODO add your handling code here:
+                    int a = Integer.parseInt(textField1.getText());
+        int b = Integer.parseInt(textField2.getText());
+        int res = a + b;
+        String r = Integer.toString(res);
+        jLabel1.setText(r);
+            try{
+                 Class.forName("com.mysql.cj.jdbc.Driver");
+                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Calculator?zeroDateTimeBehavior=CONVERT_TO_NULL","root","");
+                 Statement st = con.createStatement();
+                 PreparedStatement ps = con.prepareStatement("INSERT INTO history VALUES(?,?,?)");
+                 ps.setString(1,Integer.toString(a));
+                 ps.setString(2,Integer.toString(b));
+                 ps.setString(3, Integer.toString(res));
+                 ps.execute();
+            }
+            catch(ClassNotFoundException e){
+                System.out.println("ClassNOtFound");
+            }  catch(SQLException ex){
+                System.out.println("ClassNot Found");
+            }
     }                                        
     
     /**
