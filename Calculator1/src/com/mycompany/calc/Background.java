@@ -9,6 +9,7 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class Background extends javax.swing.JFrame {
 
@@ -182,17 +183,30 @@ public class Background extends javax.swing.JFrame {
         int a = Integer.parseInt(textField1.getText());
         int b = Integer.parseInt(textField2.getText());
         int res = a + b;
-        String r = Integer.toString(res);
+        String r = Integer.toString(res); //wrapper class
+        
+//        esult.setText(r);
+
         jLabel1.setText(r);
             try{
                  Class.forName("com.mysql.cj.jdbc.Driver");
-                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Calculator?zeroDateTimeBehavior=CONVERT_TO_NULL","root","");
-                 Statement st = con.createStatement();
+                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/calculator?zeroDateTimeBehavior=CONVERT_TO_NULL","root","");
+//                 Statement st = con.createStatement();
                  PreparedStatement ps = con.prepareStatement("INSERT INTO history VALUES(?,?,?)");
                  ps.setString(1,Integer.toString(a));
                  ps.setString(2,Integer.toString(b));
                  ps.setString(3, Integer.toString(res));
                  ps.execute();
+                 
+                 Statement st = con.createStatement();
+                 String sql = "SELECT firstNumber, secondNumber, result form history";
+                 ResultSet rs = st.executeQuery(sql);
+                 
+                 while(rs.next()){
+                  System.out.println(rs.getString("result"));   
+                  System.out.println(rs.getString("firstNumber"));  
+                  System.out.println(rs.getString("secondNumber"));  
+                 }
             }
             catch(ClassNotFoundException e){
                 System.out.println("ClassNOtFound");
@@ -245,5 +259,6 @@ public class Background extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private java.awt.TextField textField1;
     private java.awt.TextField textField2;
+    
     // End of variables declaration                   
 }
